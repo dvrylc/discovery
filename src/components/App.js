@@ -3,6 +3,7 @@ import React from 'react';
 
 // Internal imports
 import api from '../utilities/api';
+import Header from './Header';
 
 class App extends React.Component {
   constructor() {
@@ -29,7 +30,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        Discovery
+        <Header />
       </div>
     );
   }
