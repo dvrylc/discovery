@@ -1,3 +1,12 @@
+/*
+  Colors -
+  Base  #000000
+  10%   #1A1A1A
+  20%   #333333
+  30%   #4D4D4D
+  40%   #666666
+               */
+
 /* Global */
 * {
   box-sizing: border-box;
@@ -23,17 +32,31 @@ a {
   text-decoration: none;
 }
 a:hover, a:active, a:focus {
-  color: #4D4D4D;
+  color: #666666;
 }
 
 h1 {
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+main {
+  padding: 10px 0;
 }
 
 /* Header */
 header {
   padding-bottom: 10px;
-  border-bottom: 1px solid #4D4D4D;
+  border-bottom: 1px solid #666666;
+}
+header h1 {
+  display: inline-block;
+}
+header > a:last-child {
+  float: right;
 }

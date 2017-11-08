@@ -9,6 +9,8 @@ class Header extends React.Component {
         <h1>
           <Link to="/">Discovery</Link>
         </h1>
+
+        <Link to="/about">About</Link>
       </header>
     );
   }
