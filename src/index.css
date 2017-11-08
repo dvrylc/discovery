@@ -57,6 +57,9 @@ header {
 header h1 {
   display: inline-block;
 }
+header a {
+  color: #1A1A1A;
+}
 header > a:last-child {
   float: right;
 }
