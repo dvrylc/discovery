@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+body {
+  color: #1A1A1A;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
 .app {
   width: 100%;
   max-width: 600px;
