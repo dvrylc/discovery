@@ -64,3 +64,8 @@ header > a:last-child {
 article {
   padding: 5px 0;
 }
+
+/* NewsItem */
+.news-item article {
+  border-bottom: 1px solid #666666;
+}
