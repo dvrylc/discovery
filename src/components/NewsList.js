@@ -16,7 +16,7 @@ class NewsList extends React.Component {
     });
 
     return (
-      <main>
+      <main className="news-list">
         { newsListItems }
       </main>
     );

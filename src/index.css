@@ -5,6 +5,7 @@
   20%   #333333
   30%   #4D4D4D
   40%   #666666
+  90%   #E5E5E5
                */
 
 /* Global */
@@ -24,7 +25,6 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 10px;
 }
 
 a {
@@ -47,7 +47,7 @@ strong {
 
 /* Header */
 header {
-  padding-bottom: 10px;
+  padding: 10px;
   border-bottom: 1px solid #666666;
 }
 header h1 {
@@ -60,21 +60,49 @@ header > a:last-child {
   float: right;
 }
 
+/* NewsList */
+.news-list {
+  margin: 10px;
+}
+
 /* NewsListItem */
-article {
-  padding: 5px 0;
+.news-list article {
+  margin-bottom: 10px;
 }
 
 /* NewsItem */
 .news-item article {
+  padding: 10px;
   border-bottom: 1px solid #666666;
 }
 
 /* Comments */
 .comments div {
-  padding: 5px 0;
-  border-bottom: 1px solid #666666;
+  padding: 10px;
+  border-bottom: 1px solid #E5E5E5;
 }
 .comments p {
-  margin: 5px 0;
+  margin: 0 0 10px;
+}
+.comments p:last-child {
+  margin-bottom: 0;
+}
+.comments .l-1 {
+  border-left: 4px solid blue;
+}
+.comments .l-2 {
+  margin-left: 4px;
+  border-left: 4px solid purple;
+}
+.comments .l-3 {
+  margin-left: 8px;
+  border-left: 4px solid green;
+}
+.comments .l-4 {
+  margin-left: 12px;
+  border-left: 4px solid orange;
+}
+.comments .l-5 {
+  margin-left: 12px;
+  border-left: 4px solid red;
 }
