@@ -23,9 +23,6 @@ class NewsItem extends React.Component {
         this.setState({
           item: r
         });
-
-        //console.log(r);
-        console.log(`Item fetched: ${id}`);
       })
       .catch(e => console.error(e));
   }
