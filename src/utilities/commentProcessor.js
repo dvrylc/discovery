@@ -9,7 +9,7 @@ const commentProcessor = comments => {
 
   const proc = comments => {
     comments.forEach((comment, index) => {
-      output.push(<Comment key={ `L${ comment.level }-${ index }` } comment={ comment } />);
+      output.push(<Comment key={ comment.id } comment={ comment } />);
 
       if (comment.comments.length !== 0) {
         proc(comment.comments);
