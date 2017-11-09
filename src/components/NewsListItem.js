@@ -8,18 +8,19 @@ class NewsListItem extends React.Component {
 
     return (
       <article>
-        <span>{ item.user } · { item.time_ago }</span>
+        <a href={ item.url }>
+          <div>
+            <span>{ item.user } · { item.time_ago }</span>
 
-        <h1>
-          <a href={ item.url }>{ item.title }</a>
-        </h1>
+            <h1>{ item.title }</h1>
+          </div>
+        </a>
 
-        <span>
-          { item.points } points
-          <Link to={{ pathname: `/item/${ item.id }` }}>
-            { ` · ${item.comments_count}` } comments
-          </Link>
-        </span>
+        <Link to={{ pathname: `/item/${item.id}` }}>
+          <div>
+            <span>{ item.points } points · { item.comments_count } comments</span>
+          </div>
+        </Link>
       </article>
     );
   }
