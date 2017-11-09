@@ -69,3 +69,12 @@ article {
 .news-item article {
   border-bottom: 1px solid #666666;
 }
+
+/* Comments */
+.comments div {
+  padding: 5px 0;
+  border-bottom: 1px solid #666666;
+}
+.comments p {
+  margin: 5px 0;
+}
