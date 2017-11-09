@@ -18,11 +18,11 @@ body {
 }
 
 a {
-  color: #D84315;
+  color: #FF5722;
   text-decoration: none;
 }
 a:hover {
-  color: #FF5722;
+  color: #FF8A65;
 }
 
 h1 {
@@ -89,31 +89,31 @@ header > a:last-child {
   margin-bottom: 0;
 }
 .comments .l1 {
-  border-left: 4px solid #673AB7;
+  border-left: 4px solid #F44336;
 }
 .comments .l2 {
   margin-left: 4px;
-  border-left: 4px solid #FFC107;
+  border-left: 4px solid #9C27B0;
 }
 .comments .l3 {
   margin-left: 8px;
-  border-left: 4px solid #F44336;
+  border-left: 4px solid #FF9800;
 }
 .comments .l4 {
   margin-left: 12px;
-  border-left: 4px solid #4CAF50;
+  border-left: 4px solid #3F51B5;
 }
 .comments .l5 {
   margin-left: 16px;
-  border-left: 4px solid #3F51B5;
+  border-left: 4px solid #FFEB3B;
 }
 .comments .l6 {
   margin-left: 20px;
-  border-left: 4px solid #E91E63;
+  border-left: 4px solid #2196F3;
 }
 .comments .l7 {
   margin-left: 24px;
-  border-left: 4px solid #CDDC39;
+  border-left: 4px solid #4CAF50;
 }
 .comments .l8 {
   margin-left: 28px;
