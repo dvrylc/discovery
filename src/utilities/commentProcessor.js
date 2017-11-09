@@ -8,7 +8,7 @@ const commentProcessor = comments => {
   let output = [];
 
   const proc = comments => {
-    comments.forEach((comment, index) => {
+    comments.forEach(comment => {
       output.push(<Comment key={ comment.id } comment={ comment } />);
 
       if (comment.comments.length !== 0) {

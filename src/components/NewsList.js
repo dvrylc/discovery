@@ -29,8 +29,8 @@ class NewsList extends React.Component {
 
   render() {
     const news = this.state.news;
-    const newsListItems = news.map((item, index) => {
-      return <NewsListItem key={ index } item={ item } />;
+    const newsListItems = news.map(item => {
+      return <NewsListItem key={ item.id } item={ item } />;
     });
 
     return (
