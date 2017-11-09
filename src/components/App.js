@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import api from '../utilities/api';
 import Header from './Header';
 import About from './About';
+import NewsList from './NewsList';
 
 class App extends React.Component {
   constructor() {
@@ -34,6 +35,9 @@ class App extends React.Component {
       <div className="app">
         <Header />
 
+        <Route exact path="/" render={
+          props => <NewsList {...props} news={ this.state.news } />
+        } />
         <Route exact path="/about" component={ About } />
       </div>
     );
