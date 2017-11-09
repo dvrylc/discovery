@@ -36,17 +36,13 @@ a:hover, a:active, a:focus {
 }
 
 h1 {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
 }
 
 strong {
   font-weight: 600;
-}
-
-main {
-  padding: 10px 0;
 }
 
 /* Header */
@@ -62,4 +58,9 @@ header a {
 }
 header > a:last-child {
   float: right;
+}
+
+/* NewsListItem */
+article {
+  padding: 5px 0;
 }
