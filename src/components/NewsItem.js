@@ -41,15 +41,15 @@ class NewsItem extends React.Component {
     return (
       <main className="news-item">
         <article>
-          <span>{ item.user } · { item.time_ago }</span>
+          <a href={ item.url }>
+            <div>
+              <span>{ item.user } · { item.time_ago }</span>
 
-          <h1>
-            <a href={ item.url }>{ item.title }</a>
-          </h1>
+              <h1>{ item.title }</h1>
 
-          <span>
-            { item.points } points · { item.comments_count }  comments
-          </span>
+              <span>{ item.points } points · { item.comments_count } comments</span>
+            </div>
+          </a>
         </article>
 
         <section className="comments">

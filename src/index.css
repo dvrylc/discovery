@@ -64,6 +64,9 @@ header > a:last-child {
   padding: 10px;
   border-bottom: 1px solid #FBE9E7;
 }
+.news-item article a {
+  color: #222222;
+}
 
 /* Comments */
 .comments div {
