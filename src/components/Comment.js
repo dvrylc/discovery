@@ -6,7 +6,7 @@ class Comment extends React.Component {
     const comment = this.props.comment;
 
     return (
-      <div className={ `l-${comment.level}` }>
+      <div className={ `l${comment.level}` }>
         <p><strong>{ comment.user }</strong></p>
 
         <p dangerouslySetInnerHTML={{ __html: comment.content }} />
