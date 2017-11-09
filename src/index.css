@@ -82,11 +82,14 @@ header > a:last-child {
 .comments p:first-child {
   display: inline-block;
 }
-.comments pre {
-  white-space: pre-wrap;
-}
 .comments p:last-child {
   margin-bottom: 0;
+}
+.comments p {
+  word-break: break-word;
+}
+.comments pre {
+  white-space: pre-wrap;
 }
 .comments .l1 {
   border-left: 4px solid #F44336;
