@@ -23,6 +23,8 @@ class NewsItem extends React.Component {
         this.setState({
           item: r
         });
+
+        document.title = `${ r.title } · Discovery`
       })
       .catch(e => console.error(e));
   }
