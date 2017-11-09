@@ -76,6 +76,12 @@ header > a:last-child {
 .comments p {
   margin: 0 0 10px;
 }
+.comments p:first-child {
+  display: inline-block;
+}
+.comments time {
+  float: right;
+}
 .comments pre {
   white-space: pre-wrap;
 }
