@@ -38,11 +38,7 @@ class NewsItem extends React.Component {
     }
 
     const item = this.state.item;
-
-    let comments = [];
-    if (Object.keys(item).length !== 0) {
-      comments = commentProcessor(item.comments);
-    }
+    const comments = commentProcessor(item.comments);
 
     return (
       <main className="news-item">
