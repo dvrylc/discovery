@@ -54,7 +54,7 @@ class NewsItem extends React.Component {
           </a>
         </article>
 
-        <section className="comments">
+        <section>
           { comments }
         </section>
       </main>

@@ -7,12 +7,12 @@ import Comment from '../components/Comment';
 const commentProcessor = comments => {
   let output = [];
 
-  const proc = comments => {
+  const proc = (comments, collapsed = false) => {
     comments.forEach(comment => {
-      output.push(<Comment key={ comment.id } comment={ comment } />);
+      output.push(<Comment key={ comment.id } comment={ comment } collapsed={ collapsed } />);
 
       if (comment.comments.length !== 0) {
-        proc(comment.comments);
+        proc(comment.comments, true);
       }
     });
   }

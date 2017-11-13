@@ -75,56 +75,63 @@ header > a:last-child {
 }
 
 /* Comments */
-.comments div {
+.comment {
   padding: 10px;
   border-bottom: 1px solid #FBE9E7;
 }
-.comments div > a:first-of-type {
-  float: right;
+.comment .comment-meta {
+  cursor: pointer;
 }
-.comments p {
-  margin: 0 0 10px;
+.comment .comment-meta:not(:last-child) {
+  margin-bottom: 10px;
 }
-.comments p:first-child {
+.comment .comment-meta p {
+  margin: 0;
   display: inline-block;
 }
-.comments p:last-child {
-  margin-bottom: 0;
+.comment .comment-meta a {
+  float: right;
 }
-.comments p {
+.comment p {
+  margin: 0 0 10px;
   word-break: break-word;
 }
-.comments pre {
+.comment p:last-of-type {
+  margin-bottom: 0;
+}
+.comment pre {
   white-space: pre-wrap;
 }
-.comments .l1 {
+
+/* Comment levels */
+.comment.l1 {
   border-left: 4px solid #F44336;
 }
-.comments .l2 {
+.comment.l2 {
   margin-left: 4px;
   border-left: 4px solid #9C27B0;
 }
-.comments .l3 {
+.comment.l3 {
   margin-left: 8px;
   border-left: 4px solid #FF9800;
 }
-.comments .l4 {
+.comment.l4 {
   margin-left: 12px;
   border-left: 4px solid #3F51B5;
 }
-.comments .l5 {
+.comment.l5 {
   margin-left: 16px;
   border-left: 4px solid #FFEB3B;
 }
-.comments .l6 {
+.comment.l6 {
   margin-left: 20px;
   border-left: 4px solid #2196F3;
 }
-.comments .l7 {
+.comment.l7 {
   margin-left: 24px;
   border-left: 4px solid #4CAF50;
 }
-.comments .l8 {
+.comment.l8 {
   margin-left: 28px;
   border-left: 4px solid #795548;
 }
