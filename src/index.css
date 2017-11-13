@@ -47,8 +47,9 @@ header > a:last-child {
   float: right;
 }
 
-/* Loading */
-.loading {
+/* Loading, NewsItem no comments */
+.loading,
+.news-item .no-comments {
   margin: 4rem 10px;
   text-align: center;
 }

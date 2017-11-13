@@ -5,6 +5,12 @@ import React from 'react';
 import Comment from '../components/Comment';
 
 const commentProcessor = comments => {
+  if (comments.length === 0) {
+    return (
+      <p className="no-comments">No comments found.</p>
+    );
+  }
+
   let output = [];
 
   const proc = (comments, collapsed = false) => {
