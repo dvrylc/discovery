@@ -4,13 +4,15 @@ import React from 'react';
 // Internal imports
 import api from '../utilities/api';
 import commentProcessor from '../utilities/commentProcessor';
+import Loading from './Loading';
 
 class NewsItem extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      item: {}
+      item: {},
+      loading: true
     }
   }
 
@@ -21,7 +23,8 @@ class NewsItem extends React.Component {
       .then(r => r.json())
       .then(r => {
         this.setState({
-          item: r
+          item: r,
+          loading: false
         });
 
         document.title = `${ r.title } · Discovery`
@@ -30,6 +33,10 @@ class NewsItem extends React.Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <Loading />;
+    }
+
     const item = this.state.item;
 
     let comments = [];

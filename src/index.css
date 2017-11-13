@@ -47,6 +47,12 @@ header > a:last-child {
   float: right;
 }
 
+/* Loading */
+.loading {
+  margin: 4rem 10px;
+  text-align: center;
+}
+
 /* NewsListItem */
 .news-list article {
   padding: 10px;
