@@ -21,24 +21,24 @@ class Comment extends React.Component {
 
     if (this.state.collapsed) {
       return (
-        <div className={ `comment l${comment.level}` }>
+        <div className={ `comment l${ comment.level }` }>
           <div className="comment-meta" onClick={ this.toggleCollapse }>
             <p><strong>{ comment.user }</strong></p>
 
             <a href={ `https://news.ycombinator.com/item?id=${comment.id}` }>
-              {comment.time_ago}
+              { comment.time_ago }
             </a>
           </div>
         </div>
       );
     } else {
       return (
-        <div className={ `comment l${comment.level}` }>
+        <div className={ `comment l${ comment.level }` }>
           <div className="comment-meta" onClick={ this.toggleCollapse }>
             <p><strong>{ comment.user }</strong></p>
 
             <a href={ `https://news.ycombinator.com/item?id=${comment.id}` }>
-              {comment.time_ago}
+              { comment.time_ago }
             </a>
           </div>
 
