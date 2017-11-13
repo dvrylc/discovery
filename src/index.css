@@ -65,6 +65,18 @@ header > a:last-child {
   color: #222222;
 }
 
+/* NewsList load more */
+.news-list > a:last-child {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.news-list > a:last-child:hover {
+  background: #FBE9E7;
+}
+
 /* NewsItem */
 .news-item article {
   padding: 10px;

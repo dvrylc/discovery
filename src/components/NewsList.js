@@ -11,6 +11,7 @@ class NewsList extends React.Component {
     super();
 
     this.state = {
+      currentPage: 0,
       news: [],
       loading: true
     };
@@ -18,12 +19,16 @@ class NewsList extends React.Component {
 
   componentDidMount() {
     document.title = "Discovery";
+    this.loadMoreItems();
+  }
 
-    api.fetchNews()
+  loadMoreItems = () => {
+    api.fetchNews(this.state.currentPage + 1)
       .then(r => r.json())
       .then(r => {
         this.setState({
-          news: r,
+          currentPage: this.state.currentPage + 1,
+          news: this.state.news.concat(r),
           loading: false
         });
       })
@@ -43,6 +48,8 @@ class NewsList extends React.Component {
     return (
       <main className="news-list">
         { newsListItems }
+
+        <a onClick={ this.loadMoreItems }>Load more items...</a>
       </main>
     );
   }

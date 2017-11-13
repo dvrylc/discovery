@@ -1,7 +1,7 @@
 const api = {
-  fetchNews: () => {
-    console.log('Fetch: News');
-    return fetch('https://api.hackerwebapp.com/news');
+  fetchNews: page => {
+    console.log(`Fetch: News page ${page}`);
+    return fetch(`https://api.hackerwebapp.com/news?page=${page}`);
   },
   fetchItem: id => {
     console.log(`Fetch: Item ${id}`);
