@@ -19,33 +19,24 @@ class Comment extends React.Component {
   render() {
     const comment = this.props.comment;
 
-    if (this.state.collapsed) {
-      return (
-        <div className={ `comment l${ comment.level }` }>
-          <div className="comment-meta" onClick={ this.toggleCollapse }>
-            <p><strong>{ comment.user }</strong></p>
-
-            <a href={ `https://news.ycombinator.com/item?id=${comment.id}` }>
-              { comment.time_ago }
-            </a>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className={ `comment l${ comment.level }` }>
-          <div className="comment-meta" onClick={ this.toggleCollapse }>
-            <p><strong>{ comment.user }</strong></p>
-
-            <a href={ `https://news.ycombinator.com/item?id=${comment.id}` }>
-              { comment.time_ago }
-            </a>
-          </div>
-
-          <p dangerouslySetInnerHTML={{ __html: comment.content }} />
-        </div>
-      );
+    let commentBody;
+    if (!this.state.collapsed) {
+      commentBody = <p dangerouslySetInnerHTML={{ __html: comment.content }} />;
     }
+
+    return (
+      <div className={ `comment l${ comment.level }` }>
+        <div className="comment-meta" onClick={ this.toggleCollapse }>
+          <p><strong>{ comment.user }</strong></p>
+
+          <a href={ `https://news.ycombinator.com/item?id=${comment.id}` }>
+            { comment.time_ago }
+          </a>
+        </div>
+
+        { commentBody }
+      </div>
+    );
   }
 }
 
