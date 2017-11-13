@@ -19,6 +19,15 @@ class Comment extends React.Component {
   render() {
     const comment = this.props.comment;
 
+    // Render deleted comments
+    if (comment.deleted) {
+      return (
+        <div className={ `comment l${ comment.level }` }>
+          <p>{ comment.content }</p>
+        </div>
+      );
+    }
+
     let commentBody;
     if (!this.state.collapsed) {
       commentBody = <p dangerouslySetInnerHTML={{ __html: comment.content }} />;
