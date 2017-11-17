@@ -13,12 +13,13 @@ const commentProcessor = comments => {
 
   let output = [];
 
-  const proc = (comments, collapsed = false) => {
+  const proc = (comments) => {
     comments.forEach(comment => {
+      const collapsed = comment.level < 3 ? false : true;
       output.push(<Comment key={ comment.id } comment={ comment } collapsed={ collapsed } />);
 
       if (comment.comments.length !== 0) {
-        proc(comment.comments, true);
+        proc(comment.comments);
       }
     });
   }
