@@ -39,7 +39,7 @@ strong {
 pre, code {
   font-size: 0.9em;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  white-space: pre-wrap;
+  overflow-x: scroll;
 }
 
 /* Header */
