@@ -4,6 +4,7 @@ import React from 'react';
 // Internal imports
 import api from '../utilities/api';
 import NewsListItem from './NewsListItem';
+import NewsListAskItem from './NewsListAskItem';
 import Loading from './Loading';
 
 class NewsList extends React.Component {
@@ -42,7 +43,12 @@ class NewsList extends React.Component {
 
     const news = this.state.news;
     const newsListItems = news.map(item => {
-      return <NewsListItem key={ item.id } item={ item } />;
+      switch(item.type) {
+        case 'ask':
+          return <NewsListAskItem key={ item.id } item={ item } />;
+        default:
+          return <NewsListItem key={ item.id } item={ item } />;
+      }
     });
 
     return (

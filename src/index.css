@@ -66,6 +66,9 @@ header > a:last-child {
 .news-list article a:first-child {
   color: #222222;
 }
+.news-list article span:last-child {
+  color: #FF5722;
+}
 
 /* NewsList load more */
 .news-list > a:last-child {
