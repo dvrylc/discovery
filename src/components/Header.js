@@ -10,7 +10,7 @@ class Header extends React.Component {
           <Link to="/">Discovery</Link>
         </h1>
 
-        <Link to="/about">About</Link>
+        <Link className="about-link" to="/about">About</Link>
       </header>
     );
   }

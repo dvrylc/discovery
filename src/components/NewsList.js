@@ -55,10 +55,10 @@ class NewsList extends React.Component {
     });
 
     return (
-      <main className="news-list">
+      <main>
         { newsListItems }
 
-        <a onClick={ this.loadMoreItems }>Load more items...</a>
+        <a className="news-list-load-more" onClick={ this.loadMoreItems }>Load more items...</a>
       </main>
     );
   }

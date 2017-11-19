@@ -7,8 +7,8 @@ class NewsListAskItem extends React.Component {
     const item = this.props.item;
 
     return (
-      <article>
-        <Link to={{ pathname: `/item/${item.id}` }}>
+      <article className="news-list-item">
+        <Link className="news-list-item-meta" to={{ pathname: `/item/${item.id}` }}>
           <div>
             <span>{ item.user } · { item.time_ago }</span>
 

@@ -7,8 +7,8 @@ class NewsListItem extends React.Component {
     const item = this.props.item;
 
     return (
-      <article>
-        <a href={ item.url }>
+      <article className="news-list-item">
+        <a className="news-list-item-meta" href={ item.url }>
           <div>
             <span>{ item.user } · { item.time_ago }</span>
 

@@ -45,8 +45,8 @@ class NewsItem extends React.Component {
     let main;
     if (item.type === 'job') {
       main = (
-        <main className="news-item">
-          <article>
+        <main>
+          <article className="news-item">
             <a href={ `https://news.ycombinator.com/item?id=${item.id}` }>
               <div>
                 <span>{ item.time_ago }</span>
@@ -64,8 +64,8 @@ class NewsItem extends React.Component {
       const comments = commentProcessor(item.comments);
 
       main = (
-        <main className="news-item">
-          <article>
+        <main>
+          <article className="news-item">
             <a href={ item.url }>
               <div>
                 <span>{ item.user } · { item.time_ago }</span>

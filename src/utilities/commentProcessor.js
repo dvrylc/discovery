@@ -7,7 +7,7 @@ import Comment from '../components/Comment';
 const commentProcessor = comments => {
   if (comments.length === 0) {
     return (
-      <p className="no-comments">No comments found.</p>
+      <p className="news-item-no-comments">No comments found.</p>
     );
   }
 

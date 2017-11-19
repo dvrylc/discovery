@@ -7,7 +7,7 @@ body {
   color: #222222;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: 0.9em;
   line-height: 1.5;
   margin: 0;
 }
@@ -44,50 +44,51 @@ header {
 header h1 {
   display: inline-block;
 }
-header > a:last-child {
+header .about-link {
   float: right;
 }
 
 /* Loading, NewsItem no comments */
 .loading,
-.news-item .no-comments {
+.news-item-no-comments {
   margin: 4rem 10px;
   text-align: center;
 }
 
-/* NewsListItem */
-.news-list article {
-  padding: 10px;
-  border-bottom: 1px solid #FBE9E7;
-}
-.news-list article:hover {
-  background: #FBE9E7;
-}
-.news-list article a:first-child {
-  color: #222222;
-}
-.news-list article span:last-child {
-  color: #FF5722;
-}
-
 /* NewsList load more */
-.news-list > a:last-child {
+.news-list-load-more {
   display: block;
   width: 100%;
   padding: 20px;
   text-align: center;
   cursor: pointer;
 }
-.news-list > a:last-child:hover {
+.news-list-load-more:hover {
   background: #FBE9E7;
 }
 
-/* NewsItem */
-.news-item article {
+/* NewsListItem */
+.news-list-item {
   padding: 10px;
   border-bottom: 1px solid #FBE9E7;
 }
-.news-item article a {
+.news-list-item:hover {
+  background: #FBE9E7;
+}
+.news-list-item-meta,
+.news-list-item-meta:hover {
+  color: #222222;
+}
+.news-list-item-meta span:last-child {
+  color: #FF5722;
+}
+
+/* NewsItem */
+.news-item {
+  padding: 10px;
+  border-bottom: 1px solid #FBE9E7;
+}
+.news-item a {
   color: #222222;
 }
 
@@ -95,19 +96,6 @@ header > a:last-child {
 .comment {
   padding: 10px;
   border-bottom: 1px solid #FBE9E7;
-}
-.comment .comment-meta {
-  cursor: pointer;
-}
-.comment .comment-meta:not(:last-child) {
-  margin-bottom: 10px;
-}
-.comment .comment-meta p {
-  margin: 0;
-  display: inline-block;
-}
-.comment .comment-meta a {
-  float: right;
 }
 .comment p {
   margin: 0 0 10px;
@@ -119,36 +107,50 @@ header > a:last-child {
 .comment pre {
   white-space: pre-wrap;
 }
+.comment-meta {
+  cursor: pointer;
+}
+.comment-meta:not(:last-child) {
+  margin-bottom: 10px;
+}
+.comment-meta p {
+  margin: 0;
+  display: inline-block;
+}
+.comment-meta a {
+  float: right;
+}
+
 
 /* Comment levels */
-.comment.l1 {
+.comment-l1 {
   border-left: 4px solid #F44336;
 }
-.comment.l2 {
+.comment-l2 {
   margin-left: 4px;
   border-left: 4px solid #9C27B0;
 }
-.comment.l3 {
+.comment-l3 {
   margin-left: 8px;
   border-left: 4px solid #FF9800;
 }
-.comment.l4 {
+.comment-l4 {
   margin-left: 12px;
   border-left: 4px solid #3F51B5;
 }
-.comment.l5 {
+.comment-l5 {
   margin-left: 16px;
   border-left: 4px solid #FFEB3B;
 }
-.comment.l6 {
+.comment-l6 {
   margin-left: 20px;
   border-left: 4px solid #2196F3;
 }
-.comment.l7 {
+.comment-l7 {
   margin-left: 24px;
   border-left: 4px solid #4CAF50;
 }
-.comment.l8 {
+.comment-l8 {
   margin-left: 28px;
   border-left: 4px solid #795548;
 }

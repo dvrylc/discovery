@@ -22,7 +22,7 @@ class Comment extends React.Component {
     // Render deleted comments
     if (comment.deleted) {
       return (
-        <div className={ `comment l${ comment.level }` }>
+        <div className={ `comment comment-l${ comment.level }` }>
           <p>{ comment.content }</p>
         </div>
       );
@@ -34,7 +34,7 @@ class Comment extends React.Component {
     }
 
     return (
-      <div className={ `comment l${ comment.level }` }>
+      <div className={ `comment comment-l${ comment.level }` }>
         <div className="comment-meta" onClick={ this.toggleCollapse }>
           <p><strong>{ comment.user }</strong></p>
 
