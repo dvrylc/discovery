@@ -30,7 +30,7 @@ class Comment extends React.Component {
 
     let commentBody;
     if (!this.state.collapsed) {
-      commentBody = <p dangerouslySetInnerHTML={{ __html: comment.content }} />;
+      commentBody = <div dangerouslySetInnerHTML={{ __html: comment.content }} />;
     }
 
     return (
