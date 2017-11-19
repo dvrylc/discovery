@@ -19,6 +19,7 @@ class NewsItem extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id;
 
+    // Fetch item
     api.fetchItem(id)
       .then(r => r.json())
       .then(r => {
@@ -27,6 +28,7 @@ class NewsItem extends React.Component {
           loading: false
         });
 
+        // Set item's title as the document title
         document.title = `${ r.title } · Discovery`
       })
       .catch(e => console.error(e));
@@ -38,27 +40,51 @@ class NewsItem extends React.Component {
     }
 
     const item = this.state.item;
-    const comments = commentProcessor(item.comments);
 
-    return (
-      <main className="news-item">
-        <article>
-          <a href={ item.url }>
-            <div>
-              <span>{ item.user } · { item.time_ago }</span>
+    // Render differently depending on whether item is a job or news
+    let main;
+    if (item.type === 'job') {
+      main = (
+        <main className="news-item">
+          <article>
+            <a href={ `https://news.ycombinator.com/item?id=${item.id}` }>
+              <div>
+                <span>{ item.time_ago }</span>
 
-              <h1>{ item.title }</h1>
+                <h1>{ item.title }</h1>
+              </div>
+            </a>
+          </article>
 
-              <span>{ item.points } points · { item.comments_count } comments</span>
-            </div>
-          </a>
-        </article>
+          <div className="comment" dangerouslySetInnerHTML={{ __html: item.content }} />
+        </main>
+      );
+    } else {
+      // Process comments
+      const comments = commentProcessor(item.comments);
 
-        <section>
-          { comments }
-        </section>
-      </main>
-    );
+      main = (
+        <main className="news-item">
+          <article>
+            <a href={ item.url }>
+              <div>
+                <span>{ item.user } · { item.time_ago }</span>
+
+                <h1>{ item.title }</h1>
+
+                <span>{ item.points } points · { item.comments_count } comments</span>
+              </div>
+            </a>
+          </article>
+
+          <section>
+            { comments }
+          </section>
+        </main>
+      );
+    }
+
+    return main;
   }
 }
 
