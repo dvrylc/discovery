@@ -36,6 +36,12 @@ strong {
   font-weight: 600;
 }
 
+pre, code {
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: pre-wrap;
+}
+
 /* Header */
 header {
   padding: 10px;
@@ -103,9 +109,6 @@ header .about-link {
 }
 .comment p:last-of-type {
   margin-bottom: 0;
-}
-.comment pre {
-  white-space: pre-wrap;
 }
 .comment-meta {
   cursor: pointer;
