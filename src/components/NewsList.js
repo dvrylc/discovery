@@ -2,47 +2,22 @@
 import React from 'react';
 
 // Internal imports
-import api from '../utilities/api';
 import NewsListItem from './NewsListItem';
 import NewsListAskItem from './NewsListAskItem';
 import NewsListJobItem from './NewsListJobItem';
 import Loading from './Loading';
 
 class NewsList extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentPage: 0,
-      news: [],
-      loading: true
-    };
-  }
-
   componentDidMount() {
     document.title = "Discovery";
-    this.loadMoreItems();
-  }
-
-  loadMoreItems = () => {
-    api.fetchNews(this.state.currentPage + 1)
-      .then(r => r.json())
-      .then(r => {
-        this.setState({
-          currentPage: this.state.currentPage + 1,
-          news: this.state.news.concat(r),
-          loading: false
-        });
-      })
-      .catch(e => console.error(e));
   }
 
   render() {
-    if (this.state.loading) {
+    if (this.props.data.length === 0) {
       return <Loading />;
     }
 
-    const news = this.state.news;
+    const news = this.props.data;
     const newsListItems = news.map(item => {
       switch(item.type) {
         case 'ask':
@@ -58,7 +33,7 @@ class NewsList extends React.Component {
       <main>
         { newsListItems }
 
-        <a className="news-list-load-more" onClick={ this.loadMoreItems }>Load more items...</a>
+        <a className="news-list-load-more" onClick={ this.props.fetchNews }>Load more items...</a>
       </main>
     );
   }
