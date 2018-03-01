@@ -2,44 +2,26 @@
 import React from 'react';
 
 // Internal imports
-import api from '../utilities/api';
 import commentProcessor from '../utilities/commentProcessor';
 import Loading from './Loading';
 
 class NewsItem extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      item: {},
-      loading: true
-    }
-  }
-
   componentDidMount() {
     const id = this.props.match.params.id;
 
-    // Fetch item
-    api.fetchItem(id)
-      .then(r => r.json())
-      .then(r => {
-        this.setState({
-          item: r,
-          loading: false
-        });
-
-        // Set item's title as the document title
-        document.title = `${ r.title } · Discovery`
-      })
-      .catch(e => console.error(e));
+    // DL: clear & fetch item if it's not cached
+    if (''+this.props.data.id !== id) {
+      this.props.clearItem();
+      this.props.fetchItem(id);
+    }
   }
 
   render() {
-    if (this.state.loading) {
+    if (Object.keys(this.props.data).length === 0) {
       return <Loading />;
     }
 
-    const item = this.state.item;
+    const item = this.props.data;
 
     // Render differently depending on whether item is a job or news
     let main;

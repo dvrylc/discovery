@@ -14,10 +14,13 @@ class DataLayer extends React.Component {
 
     this.state = {
       newsListCurrentPage: 0,
-      newsListData: []
+      newsListData: [],
+      newsItemData: {}
     }
 
     this.fetchNews = this.fetchNews.bind(this);
+    this.fetchItem = this.fetchItem.bind(this);
+    this.clearItem = this.clearItem.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +39,23 @@ class DataLayer extends React.Component {
       .catch(e => console.error(e));
   }
 
+  fetchItem(id) {
+    api.fetchItem(id)
+      .then(r => r.json())
+      .then(r => {
+        this.setState({
+          newsItemData: r
+        });
+      })
+      .catch(e => console.error(e));
+  }
+
+  clearItem() {
+    this.setState({
+      newsItemData: {}
+    });
+  }
+
   render() {
     return (
       <div className="content">
@@ -46,9 +66,16 @@ class DataLayer extends React.Component {
           />
         } />
 
-        <Route exact path="/about" component={ About } />
+        <Route exact path="/item/:id" render={ (routerProps) =>
+          <NewsItem
+            data={ this.state.newsItemData }
+            fetchItem={ this.fetchItem }
+            clearItem={ this.clearItem }
+            {...routerProps}
+          />
+        } />
 
-        <Route exact path="/item/:id" component={ NewsItem } />
+        <Route exact path="/about" component={ About } />
       </div>
     );
   }
