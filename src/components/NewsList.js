@@ -3,8 +3,6 @@ import React from 'react';
 
 // Internal imports
 import NewsListItem from './NewsListItem';
-import NewsListAskItem from './NewsListAskItem';
-import NewsListJobItem from './NewsListJobItem';
 import Loading from './Loading';
 
 class NewsList extends React.Component {
@@ -18,16 +16,7 @@ class NewsList extends React.Component {
     }
 
     const news = this.props.data;
-    const newsListItems = news.map(item => {
-      switch(item.type) {
-        case 'ask':
-          return <NewsListAskItem key={ item.id } item={ item } />;
-        case 'job':
-          return <NewsListJobItem key={ item.id } item={ item } />;
-        default:
-          return <NewsListItem key={ item.id } item={ item } />;
-      }
-    });
+    const newsListItems = news.map(item => <NewsListItem key={ item.id } item={ item } />);
 
     return (
       <main>

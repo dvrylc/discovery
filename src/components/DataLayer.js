@@ -66,7 +66,7 @@ class DataLayer extends React.Component {
           />
         } />
 
-        <Route exact path="/item/:id" render={ (routerProps) =>
+        <Route exact path="/item/:id" render={ routerProps =>
           <NewsItem
             data={ this.state.newsItemData }
             fetchItem={ this.fetchItem }
