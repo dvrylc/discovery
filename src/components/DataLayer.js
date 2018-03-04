@@ -23,10 +23,6 @@ class DataLayer extends React.Component {
     this.clearItem = this.clearItem.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchNews();
-  }
-
   fetchNews() {
     api.fetchNews(this.state.newsListCurrentPage + 1)
       .then(r => r.json())

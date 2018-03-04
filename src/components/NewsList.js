@@ -8,6 +8,7 @@ import Loading from './Loading';
 class NewsList extends React.Component {
   componentDidMount() {
     document.title = "Discovery";
+    this.props.fetchNews();
   }
 
   render() {
