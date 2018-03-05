@@ -100,18 +100,8 @@ header .about-link {
 
 /* Comments */
 .comment {
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   border-bottom: 1px solid #FBE9E7;
-}
-.comment p {
-  margin: 0 0 10px;
-  word-break: break-word;
-}
-.comment p:last-of-type {
-  margin-bottom: 0;
-}
-.comment-meta {
-  cursor: pointer;
 }
 .comment-meta:not(:last-child) {
   margin-bottom: 10px;
@@ -120,40 +110,48 @@ header .about-link {
   margin: 0;
   display: inline-block;
 }
-.comment-meta a {
+.comment-meta a:last-child {
   float: right;
 }
-
+.comment-content p {
+  margin: 0 0 10px;
+  word-break: break-word;
+}
+.comment-content p:last-of-type {
+  margin-bottom: 0;
+}
+.comment-content:not(:last-child) {
+  margin-bottom: 10px;
+}
+.comment-nested .comment {
+  border-top: 1px solid #FBE9E7;
+}
 
 /* Comment levels */
+.comment-l0 {
+  padding-right: 10px;
+}
 .comment-l1 {
-  border-left: 4px solid #F44336;
+  border-left: 2px solid #F44336;
 }
 .comment-l2 {
-  margin-left: 4px;
-  border-left: 4px solid #9C27B0;
+  border-left: 2px solid #9C27B0;
 }
 .comment-l3 {
-  margin-left: 8px;
-  border-left: 4px solid #FF9800;
+  border-left: 2px solid #FF9800;
 }
 .comment-l4 {
-  margin-left: 12px;
-  border-left: 4px solid #3F51B5;
+  border-left: 2px solid #3F51B5;
 }
 .comment-l5 {
-  margin-left: 16px;
-  border-left: 4px solid #FFEB3B;
+  border-left: 2px solid #FFEB3B;
 }
 .comment-l6 {
-  margin-left: 20px;
-  border-left: 4px solid #2196F3;
+  border-left: 2px solid #2196F3;
 }
 .comment-l7 {
-  margin-left: 24px;
-  border-left: 4px solid #4CAF50;
+  border-left: 2px solid #4CAF50;
 }
 .comment-l8 {
-  margin-left: 28px;
-  border-left: 4px solid #795548;
+  border-left: 2px solid #795548;
 }

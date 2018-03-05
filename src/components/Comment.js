@@ -1,16 +1,23 @@
 // External import
 import React from 'react';
 
+// Internal imports
+import commentProcessor from '../utilities/commentProcessor';
+
 class Comment extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      collapsed: this.props.collapsed
-    };
+      collapsed: false
+    }
+
+    this.toggleCollapse = this.toggleCollapse.bind(this);
   }
 
-  toggleCollapse = () => {
+  toggleCollapse(e) {
+    e.preventDefault();
+
     this.setState({
       collapsed: !this.state.collapsed
     });
@@ -28,22 +35,43 @@ class Comment extends React.Component {
       );
     }
 
-    let commentBody;
+    // Handle collapsing
+    let commentContent;
     if (!this.state.collapsed) {
-      commentBody = <div dangerouslySetInnerHTML={{ __html: comment.content }} />;
+      // Nested comments
+      let commentNested;
+      if (comment.comments.length !== 0) {
+        commentNested = (
+          <div className="comment-nested">
+            { commentProcessor(comment.comments) }
+          </div>
+        );
+      }
+
+      commentContent = (
+        <div className="comment-body">
+          <div className="comment-content" dangerouslySetInnerHTML={{ __html: comment.content }} />
+
+          { commentNested }
+        </div>
+      );
     }
 
     return (
       <div className={ `comment comment-l${ comment.level }` }>
-        <div className="comment-meta" onClick={ this.toggleCollapse }>
+        <div className="comment-meta">
           <p><strong>{ comment.user }</strong></p>
+
+          <a href="" onClick={ this.toggleCollapse }>
+            { this.state.collapsed ? ` [+]` : ' [-]' }
+          </a>
 
           <a href={ `https://news.ycombinator.com/item?id=${comment.id}` }>
             { comment.time_ago }
           </a>
         </div>
 
-        { commentBody }
+        { commentContent }
       </div>
     );
   }
