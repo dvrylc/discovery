@@ -8,7 +8,11 @@ import Loading from './Loading';
 class NewsList extends React.Component {
   componentDidMount() {
     document.title = "Discovery";
-    this.props.fetchNews();
+
+    // Fetch first page of news items on initial mount
+    if (this.props.data.length === 0) {
+      this.props.fetchNews();
+    }
   }
 
   render() {
