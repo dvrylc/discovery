@@ -4,11 +4,11 @@
 }
 
 body {
-  color: #222222;
+  color: #333;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 0.9em;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -19,11 +19,11 @@ body {
 }
 
 a {
-  color: #FF5722;
+  color: #f60;
   text-decoration: none;
 }
 a:hover {
-  color: #FF8A65;
+  color: #ff8c3f;
 }
 
 h1 {
@@ -45,13 +45,14 @@ pre, code {
 /* Header */
 header {
   padding: 10px;
-  border-bottom: 1px solid #FBE9E7;
+  border-bottom: 1px solid #ffefe5;
 }
 header h1 {
   display: inline-block;
 }
 header .about-link {
   float: right;
+  line-height: 1.6;
 }
 
 /* Loading, NewsItem no comments */
@@ -70,32 +71,29 @@ header .about-link {
   cursor: pointer;
 }
 .news-list-load-more:hover {
-  background: #FBE9E7;
+  background: #ffefe5;
 }
 
 /* NewsListItem */
 .news-list-item {
   padding: 10px;
-  border-bottom: 1px solid #FBE9E7;
-}
-.news-list-item:hover {
-  background: #FBE9E7;
+  border-bottom: 1px solid #ffefe5;
 }
 .news-list-item-meta,
 .news-list-item-meta:hover {
-  color: #222222;
+  color: #333;
 }
 .news-list-item-meta span:last-child {
-  color: #FF5722;
+  color: #f60;
 }
 
 /* NewsItem */
 .news-item {
   padding: 10px;
-  border-bottom: 1px solid #FBE9E7;
+  border-bottom: 1px solid #ffefe5;
 }
 .news-item a {
-  color: #222222;
+  color: #333;
 }
 
 /* Comments */
