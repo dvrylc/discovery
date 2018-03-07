@@ -30,12 +30,10 @@ class NewsItem extends React.Component {
       main = (
         <main>
           <article className="news-item">
-            <a href={ `https://news.ycombinator.com/item?id=${item.id}` }>
-              <div>
-                <span>{ item.time_ago }</span>
+            <small>{ item.time_ago }</small>
 
-                <h1>{ item.title }</h1>
-              </div>
+            <a href={ item.url }>
+              <h1>{ item.title }</h1>
             </a>
           </article>
 
@@ -49,15 +47,13 @@ class NewsItem extends React.Component {
       main = (
         <main>
           <article className="news-item">
+            <small>{ item.user } · { item.time_ago }</small>
+
             <a href={ item.url }>
-              <div>
-                <span>{ item.user } · { item.time_ago }</span>
-
-                <h1>{ item.title }</h1>
-
-                <span>{ item.points } points · { item.comments_count } comments</span>
-              </div>
+              <h1>{ item.title }</h1>
             </a>
+
+            <small>{ item.points } points · { item.comments_count } comments</small>
           </article>
 
           <section>

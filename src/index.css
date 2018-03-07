@@ -4,7 +4,7 @@
 }
 
 body {
-  color: #222;
+  color: #212121;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 0.9em;
@@ -19,21 +19,21 @@ body {
 }
 
 a {
-  color: #F0682B;
+  color: #1565C0;
   text-decoration: none;
 }
 a:hover {
-  color: #F4956A;
+  color: #1E88E5;
 }
 
 h1 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
 }
 
-strong {
-  font-weight: 600;
+small {
+  font-size: 0.9em;
 }
 
 pre, code {
@@ -45,7 +45,7 @@ pre, code {
 /* Header */
 header {
   padding: 10px;
-  border-bottom: 1px solid #fdefe9;
+  border-bottom: 1px solid #E3F2FD;
 }
 header h1 {
   display: inline-block;
@@ -69,38 +69,44 @@ header .about-link {
   padding: 20px;
   text-align: center;
   cursor: pointer;
-  color: #F0682B;
+  color: #1565C0;
 }
 .news-list-load-more:hover {
-  color: #F0682B;
+  color: #1565C0;
+  background: #E3F2FD;
 }
 
 /* NewsListItem */
 .news-list-item {
   padding: 10px;
-  border-bottom: 1px solid #fdefe9;
+  border-bottom: 1px solid #E3F2FD;
 }
-.news-list-item-meta,
-.news-list-item-meta:hover {
-  color: #222;
+.news-list-item a {
+  display: block;
+  color: #212121;
 }
-.news-list-item-meta span:last-child {
-  color: #F0682B;
+.news-list-item a:hover,
+.news-list-item a:visited {
+  color: #9E9E9E;
 }
 
 /* NewsItem */
 .news-item {
   padding: 10px;
-  border-bottom: 1px solid #fdefe9;
+  border-bottom: 1px solid #E3F2FD;
 }
 .news-item a {
-  color: #222;
+  color: #212121;
+}
+.news-item a:hover,
+.news-item a:visited {
+  color: #9E9E9E;
 }
 
 /* Comments */
 .comment {
   padding: 10px 0 10px 10px;
-  border-bottom: 1px solid #fdefe9;
+  border-bottom: 1px solid #E3F2FD;
 }
 .comment-meta:not(:last-child) {
   margin-bottom: 10px;
@@ -123,7 +129,7 @@ header .about-link {
   margin-bottom: 10px;
 }
 .comment-nested .comment {
-  border-top: 1px solid #fdefe9;
+  border-top: 1px solid #E3F2FD;
 }
 
 /* Comment levels */

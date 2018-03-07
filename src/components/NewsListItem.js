@@ -11,44 +11,36 @@ class NewsListItem extends React.Component {
       case 'ask':
         return (
           <article className="news-list-item">
-            <Link className="news-list-item-meta" to={{ pathname: `/item/${item.id}` }}>
-              <div>
-                <span>{ item.user } · { item.time_ago }</span>
+            <small className="news-list-item-meta">{ item.user } · { item.time_ago }</small>
 
-                <h1>{ item.title }</h1>
+            <Link to={{ pathname: `/item/${item.id}` }}>
+              <h1>{ item.title }</h1>
 
-                <span>{ item.points } points · { item.comments_count } comments</span>
-              </div>
+              <small>{ item.points } points · { item.comments_count } comments</small>
             </Link>
           </article>
         );
       case 'job':
         return (
           <article className="news-list-item">
-            <Link className="news-list-item-meta" to={{ pathname: `/item/${item.id}` }}>
-              <div>
-                <span>{ item.time_ago }</span>
+            <small className="news-list-item-meta">{ item.time_ago }</small>
 
-                <h1>{ item.title }</h1>
-              </div>
+            <Link to={{ pathname: `/item/${item.id}` }}>
+              <h1>{ item.title }</h1>
             </Link>
           </article>
         );
       default:
         return (
           <article className="news-list-item">
-            <a className="news-list-item-meta" href={ item.url }>
-              <div>
-                <span>{ item.user } · { item.time_ago }</span>
+              <small className="news-list-item-meta">{ item.user } · { item.time_ago }</small>
 
+              <a href={ item.url }>
                 <h1>{ item.title }</h1>
-              </div>
-            </a>
+              </a>
 
             <Link to={{ pathname: `/item/${item.id}` }}>
-              <div>
-                <span>{ item.points } points · { item.comments_count } comments</span>
-              </div>
+              <small>{ item.points } points · { item.comments_count } comments</small>
             </Link>
           </article>
         );
