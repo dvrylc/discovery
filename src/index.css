@@ -4,7 +4,7 @@
 }
 
 body {
-  color: #333;
+  color: #222;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 0.9em;
@@ -19,11 +19,11 @@ body {
 }
 
 a {
-  color: #f60;
+  color: #F0682B;
   text-decoration: none;
 }
 a:hover {
-  color: #ff8c3f;
+  color: #F4956A;
 }
 
 h1 {
@@ -45,14 +45,14 @@ pre, code {
 /* Header */
 header {
   padding: 10px;
-  border-bottom: 1px solid #ffefe5;
+  border-bottom: 1px solid #fdefe9;
 }
 header h1 {
   display: inline-block;
 }
 header .about-link {
   float: right;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* Loading, NewsItem no comments */
@@ -69,37 +69,38 @@ header .about-link {
   padding: 20px;
   text-align: center;
   cursor: pointer;
+  color: #F0682B;
 }
 .news-list-load-more:hover {
-  background: #ffefe5;
+  color: #F0682B;
 }
 
 /* NewsListItem */
 .news-list-item {
   padding: 10px;
-  border-bottom: 1px solid #ffefe5;
+  border-bottom: 1px solid #fdefe9;
 }
 .news-list-item-meta,
 .news-list-item-meta:hover {
-  color: #333;
+  color: #222;
 }
 .news-list-item-meta span:last-child {
-  color: #f60;
+  color: #F0682B;
 }
 
 /* NewsItem */
 .news-item {
   padding: 10px;
-  border-bottom: 1px solid #ffefe5;
+  border-bottom: 1px solid #fdefe9;
 }
 .news-item a {
-  color: #333;
+  color: #222;
 }
 
 /* Comments */
 .comment {
   padding: 10px 0 10px 10px;
-  border-bottom: 1px solid #FBE9E7;
+  border-bottom: 1px solid #fdefe9;
 }
 .comment-meta:not(:last-child) {
   margin-bottom: 10px;
@@ -122,7 +123,7 @@ header .about-link {
   margin-bottom: 10px;
 }
 .comment-nested .comment {
-  border-top: 1px solid #FBE9E7;
+  border-top: 1px solid #fdefe9;
 }
 
 /* Comment levels */
@@ -130,26 +131,26 @@ header .about-link {
   padding-right: 10px;
 }
 .comment-l1 {
-  border-left: 2px solid #F44336;
+  border-left: 2px solid #f2767c;
 }
 .comment-l2 {
-  border-left: 2px solid #9C27B0;
+  border-left: 2px solid #f99061;
 }
 .comment-l3 {
-  border-left: 2px solid #FF9800;
+  border-left: 2px solid #ffcb76;
 }
 .comment-l4 {
-  border-left: 2px solid #3F51B5;
+  border-left: 2px solid #98cc9e;
 }
 .comment-l5 {
-  border-left: 2px solid #FFEB3B;
+  border-left: 2px solid #65cdcb;
 }
 .comment-l6 {
-  border-left: 2px solid #2196F3;
+  border-left: 2px solid #6699c8;
 }
 .comment-l7 {
-  border-left: 2px solid #4CAF50;
+  border-left: 2px solid #cd99c9;
 }
 .comment-l8 {
-  border-left: 2px solid #795548;
+  border-left: 2px solid #d27a59;
 }
