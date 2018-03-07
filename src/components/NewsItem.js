@@ -9,7 +9,8 @@ class NewsItem extends React.Component {
   componentDidMount() {
     const id = this.props.match.params.id;
 
-    // DL: clear & fetch item if it's not cached
+    // Check id of item in props (if available)
+    // If it's not the item we want, fetch the new item
     if (''+this.props.data.id !== id) {
       this.props.clearItem();
       this.props.fetchItem(id);
