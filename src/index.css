@@ -69,11 +69,6 @@ header .about-link {
   padding: 20px;
   text-align: center;
   cursor: pointer;
-  color: #1565C0;
-}
-.news-list-load-more:hover {
-  color: #1565C0;
-  background: #E3F2FD;
 }
 
 /* NewsListItem */
