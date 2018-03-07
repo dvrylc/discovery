@@ -95,12 +95,21 @@ header .about-link {
   padding: 10px;
   border-bottom: 1px solid #E3F2FD;
 }
-.news-item a {
+.news-item-meta:not(:last-child) {
+  margin-bottom: 10px;
+}
+.news-item-meta a {
   color: #212121;
 }
-.news-item a:hover,
+.news-item-meta a:hover,
 .news-item a:visited {
   color: #9E9E9E;
+}
+.news-item-content p {
+  margin: 0 0 10px;
+}
+.news-item-content p:last-of-type {
+  margin: 0;
 }
 
 /* Comments */

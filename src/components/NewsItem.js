@@ -24,44 +24,50 @@ class NewsItem extends React.Component {
 
     const item = this.props.data;
 
-    // Render differently depending on whether item is a job or news
-    let main;
-    if (item.type === 'job') {
-      main = (
-        <main>
-          <article className="news-item">
-            <small>{ item.time_ago }</small>
-
-            <a href={ item.url }>
-              <h1>{ item.title }</h1>
-            </a>
-          </article>
-
-          <div className="comment" dangerouslySetInnerHTML={{ __html: item.content }} />
-        </main>
+    // Parse item link if available
+    let itemLink;
+    if (item.url.startsWith('item')) {
+      itemLink = (
+        <h1>{ item.title }</h1>
       );
     } else {
-      // Process comments
-      const comments = commentProcessor(item.comments);
-
-      main = (
-        <main>
-          <article className="news-item">
-            <small>{ item.user } · { item.time_ago }</small>
-
-            <a href={ item.url }>
-              <h1>{ item.title }</h1>
-            </a>
-
-            <small>{ item.points } points · { item.comments_count } comments</small>
-          </article>
-
-          <section>
-            { comments }
-          </section>
-        </main>
+      itemLink = (
+        <a href={ item.url }>
+          <h1>{ item.title }</h1>
+        </a>
       );
     }
+
+    // Parse item content if available
+    let itemContent;
+    if (item.content) {
+      itemContent = (
+        <div className="news-item-content" dangerouslySetInnerHTML={{ __html: item.content }} />
+      );
+    }
+
+    // Process comments
+    const itemComments = commentProcessor(item.comments);
+
+    const main = (
+      <main>
+        <article className="news-item">
+          <div className="news-item-meta">
+            <small>{ item.user } · { item.time_ago }</small>
+
+            { itemLink }
+
+            <small>{ item.points } points · { item.comments_count } comments</small>
+          </div>
+
+          { itemContent }
+        </article>
+
+        <section>
+          { itemComments }
+        </section>
+      </main>
+    );
 
     return main;
   }

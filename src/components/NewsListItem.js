@@ -6,7 +6,7 @@ class NewsListItem extends React.Component {
   render() {
     const item = this.props.item;
 
-    // Return templates for respective items (normal item / job / ask)
+    // Return templates for different items (link / job / ask)
     switch(item.type) {
       case 'ask':
         return (
@@ -25,9 +25,9 @@ class NewsListItem extends React.Component {
           <article className="news-list-item">
             <small className="news-list-item-meta">{ item.time_ago }</small>
 
-            <Link to={{ pathname: `/item/${item.id}` }}>
+            <a href={ item.url }>
               <h1>{ item.title }</h1>
-            </Link>
+            </a>
           </article>
         );
       default:
