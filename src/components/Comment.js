@@ -60,7 +60,7 @@ class Comment extends React.Component {
     return (
       <div className={ `comment comment-l${ comment.level }` }>
         <div className="comment-meta">
-          <p><strong>{ comment.user }</strong></p>
+          <p>{ comment.user }</p>
 
           <a href="" onClick={ this.toggleCollapse }>
             { this.state.collapsed ? ` [+]` : ' [-]' }
