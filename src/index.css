@@ -77,8 +77,9 @@ header .about-link {
   color: #212121;
 }
 .news-list-item a:hover,
-.news-list-item a:visited {
-  color: #757575;
+.news-list-item a:visited,
+.news-list-item-meta {
+  color: #9E9E9E;
 }
 
 /* NewsList load more */
@@ -91,7 +92,7 @@ header .about-link {
   color: #212121;
 }
 .news-list-load-more:hover {
-  color: #757575;
+  color: #9E9E9E;
 }
 
 /* NewsItem */
@@ -107,7 +108,7 @@ header .about-link {
 }
 .news-item-meta a:hover,
 .news-item a:visited {
-  color: #757575;
+  color: #9E9E9E;
 }
 .news-item-content p {
   margin: 0 0 10px;
