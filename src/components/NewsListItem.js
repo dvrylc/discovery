@@ -2,6 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Internal imports
+import timeProcessor from '../utilities/timeProcessor';
+
 class NewsListItem extends React.Component {
   render() {
     const item = this.props.item;
@@ -10,7 +13,7 @@ class NewsListItem extends React.Component {
     if (item.type === 'job') {
       return (
         <article className="news-list-item">
-          <small className="news-list-item-meta">{ item.time_ago }</small>
+          <small className="news-list-item-meta">{ timeProcessor(item.time) }</small>
 
           <a href={ item.url }>
             <h1>{ item.title }</h1>
@@ -20,7 +23,7 @@ class NewsListItem extends React.Component {
     } else if (item.url.startsWith('item')) {
       return (
         <article className="news-list-item">
-          <small className="news-list-item-meta">{ item.user } · { item.time_ago }</small>
+          <small className="news-list-item-meta">{ item.user } · { timeProcessor(item.time) }</small>
 
           <Link to={{ pathname: `/item/${item.id}` }}>
             <h1>{ item.title }</h1>
@@ -32,7 +35,7 @@ class NewsListItem extends React.Component {
     } else {
       return (
         <article className="news-list-item">
-            <small className="news-list-item-meta">{ item.user } · { item.time_ago }</small>
+            <small className="news-list-item-meta">{ item.user } · { timeProcessor(item.time) }</small>
 
             <a href={ item.url }>
               <h1>{ item.title }</h1>

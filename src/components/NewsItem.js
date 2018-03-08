@@ -4,6 +4,7 @@ import React from 'react';
 // Internal imports
 import commentProcessor from '../utilities/commentProcessor';
 import Loading from './Loading';
+import timeProcessor from '../utilities/timeProcessor';
 
 class NewsItem extends React.Component {
   componentDidMount() {
@@ -53,7 +54,7 @@ class NewsItem extends React.Component {
       <main>
         <article className="news-item">
           <div className="news-item-meta">
-            <small>{ item.user } · { item.time_ago }</small>
+            <small>{ item.user } · { timeProcessor(item.time) }</small>
 
             { itemLink }
 
